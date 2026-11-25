@@ -24,14 +24,22 @@ window.MJ_CATEGORIAS = [
   { id: "piercing",     nome: "Piercings"                 }
 ];
 
+/* grupo "nobre" = metal maciço/nobre · grupo "moda" = peças com banho ou de moda */
 window.MJ_MATERIAIS = [
-  { id: "joia",       nome: "Joia",        metal: "ouro"  },
-  { id: "semijoia",   nome: "Semijoia",    metal: "semi"  },
-  { id: "folheado",   nome: "Folheado",    metal: "semi"  },
-  { id: "ouro18k",    nome: "Ouro 18K",    metal: "ouro"  },
-  { id: "tungstenio", nome: "Tungstênio",  metal: "tung"  },
-  { id: "prata",      nome: "Prata",       metal: "prata" },
-  { id: "bijuteria",  nome: "Bijuteria",   metal: "rose"  }
+  { id: "ouro18k",    nome: "Ouro 18K",    metal: "ouro",  grupo: "nobre" },
+  { id: "prata",      nome: "Prata",       metal: "prata", grupo: "nobre" },
+  { id: "tungstenio", nome: "Tungstênio",  metal: "tung",  grupo: "nobre" },
+  { id: "joia",       nome: "Joia",        metal: "ouro",  grupo: "nobre" },
+  { id: "semijoia",   nome: "Semijoia",    metal: "semi",  grupo: "moda"  },
+  { id: "folheado",   nome: "Folheado",    metal: "semi",  grupo: "moda"  },
+  { id: "bijuteria",  nome: "Bijuteria",   metal: "rose",  grupo: "moda"  }
+];
+
+/* Faixas de preço: o filtro só aparece quando houver peças com preço */
+window.MJ_FAIXAS = [
+  { id: "ate100",  nome: "Até R$ 100",          min: 0,      max: 100 },
+  { id: "100a300", nome: "R$ 100 a R$ 300",     min: 100.01, max: 300 },
+  { id: "300mais", nome: "Acima de R$ 300",     min: 300.01, max: Infinity }
 ];
 
 window.MJ_PRODUTOS = [
@@ -85,6 +93,6 @@ window.MJ_PRODUTOS = [
 
 /* Contatos das lojas */
 window.MJ_LOJAS = {
-  tucano: { nome: "Tucano",            wa: "5575991106665" },
-  pombal: { nome: "Ribeira do Pombal", wa: "5575988548714" }
+  tucano: { nome: "Tucano",            wa: "5575991106665", tel: "(75) 99110-6665" },
+  pombal: { nome: "Ribeira do Pombal", wa: "5575988548714", tel: "(75) 98854-8714" }
 };
